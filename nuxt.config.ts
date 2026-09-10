@@ -14,14 +14,5 @@ export default defineNuxtConfig({
       '/api/contributions': { isr: false },
       '/feed.xml': { isr: false },
     }
-  },
-  
-  // remove vercel.client.ts from layer
-  hooks: {
-    'app:resolve'(app: NuxtApp) {
-      app.plugins = app.plugins.filter(
-        (plugin) => !plugin.src.includes('vercel')
-      )
-    }
   }
 })
