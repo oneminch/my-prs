@@ -6,6 +6,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  $production: {
+    routeRules: {
+      '/': { isr: 60 * 5 },
+      '/api/contributions': { isr: 60 * 5 },
+      '/feed.xml': { isr: 60 * 5 },
+    },
+  },
   // remove vercel.client.ts from layer
   hooks: {
     'app:resolve'(app: NuxtApp) {
