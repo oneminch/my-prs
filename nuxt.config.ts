@@ -8,9 +8,9 @@ export default defineNuxtConfig({
 
   $production: {
     routeRules: {
-      '/': { isr: 60 * 5 },
-      '/api/contributions': { isr: 60 * 5 },
-      '/feed.xml': { isr: 60 * 5 },
+      '/': { isr: false },
+      '/api/contributions': { isr: false },
+      '/feed.xml': { isr: false },
     },
   },
   // remove vercel.client.ts from layer
